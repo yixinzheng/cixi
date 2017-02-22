@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+    <meta http-equiv="Pragma" content="no-cache"/>
+    <meta http-equiv="Expires" content="0"/>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0，user-scaleble=no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="blank" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <title>瓷禧wap</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link href="js/fancybox/jquery.fancybox.css" type="text/css" rel="stylesheet"/>
+    <link rel="stylesheet" href="css/yixin.css">
+
+</head>
+<body>
+<div class="pub-head">
+    <div class="pub-head-con">
+        <a href="" class="back"></a>
+        商品详情
+        <span class="pub-line"></span>
+    </div>
+</div>
+<div class="gray-container">
+    <div class="mt6"></div>
+    <div class="eval-box mb4">
+        <div class="eval-head">
+            <div class="eval-img"><img src="images/banner.png" alt=""></div>
+            <span class="eval-name">J***N</span>
+            <span class="eval-star eval-starthree"></span>
+        </div>
+        <div class="eval-cont">很好看很好看！！！朋友来我家了都是效果非常好！我们一家也是非常满意，售后服务这一块也挺顺利的，后来...</div>
+        <div class="eval-img-box">
+            <a href="images/floorcover1.png" class="eval-cover"><img src="images/floorcover1.png" alt=""></a>
+            <a href="images/floorcover1.png" class="eval-cover"><img src="images/floorcover1.png" alt=""></a>
+            <a href="images/floorcover1.png" class="eval-cover"><img src="images/floorcover1.png" alt=""></a>
+            <a href="images/floorcover1.png" class="eval-cover"><img src="images/floorcover1.png" alt=""></a>
+        </div>
+        <div class="eval-time">2016-11-15 14:49:32</div>
+    </div>
+    <div class="eval-box mb4">
+        <div class="eval-head">
+            <div class="eval-img"><img src="images/banner.png" alt=""></div>
+            <span class="eval-name">J***N</span>
+            <span class="eval-star eval-starthree"></span>
+        </div>
+        <div class="eval-cont">很好看很好看！！！朋友来我家了都是效果非常好！我们一家也是非常满意，售后服务这一块也挺顺利的，后来...</div>
+        <div class="eval-img-box">
+            <a href="images/floorcover1.png" class="eval-cover"><img src="images/floorcover1.png" alt=""></a>
+            <a href="images/floorcover1.png" class="eval-cover"><img src="images/floorcover1.png" alt=""></a>
+            <a href="images/floorcover1.png" class="eval-cover"><img src="images/floorcover1.png" alt=""></a>
+            <a href="images/floorcover1.png" class="eval-cover"><img src="images/floorcover1.png" alt=""></a>
+        </div>
+        <div class="eval-time">2016-11-15 14:49:32</div>
+    </div>
+</div>
+<div class="foot">
+    <div class="foot-box">
+        <a href="" class="foot-btn">反馈</a>
+        <span class="foot-line">|</span>
+        <a href="" class="foot-btn">注销</a>
+    </div>
+    <p class="foot-info">Copyright 2000-2016 点击网络 dj.cn 版权所有</p>
+</div>
+<div class="foot-divide"></div>
+<div class="footer">
+    <a href="" class="footer-btn footer-btn1">首页</a>
+    <a href="" class="footer-btn footer-btn2">分类</a>
+    <a href="" class="footer-btn footer-btn3">购物车</a>
+    <a href="" class="footer-btn footer-btn4">我的</a>
+</div>
+<!--尾部结束-->
+<script src="js/jquery-1.9.1.min.js"></script>
+<script src="js/rem.js"></script>
+<script src="js/swiper-3.4.1.min.js"></script>
+<script src="js/fancybox/jquery.fancybox.pack.js"></script>
+<script src="js/script.js"></script>
+<script>
+    new Swiper('#t-ban4', {
+        pagination: '#t-ban4 .swiper-pagination',
+        paginationClickable: true,
+        loop: true,
+        autoHeight: true,
+        autoplay: 3000
+    });
+    $(".eval-cover").fancybox();
+    $(function () {
+       $(".search-multi").on("click",function () {
+           $(this).addClass("active");
+           $(this).siblings(".search-count").removeClass("active");
+           $(this).siblings(".search-price").removeClass("up");
+           $(this).siblings(".search-price").removeClass("down");
+       });
+        $(".search-count").on("click",function () {
+            $(this).addClass("active");
+            $(this).siblings(".search-multi").removeClass("active");
+            $(this).siblings(".search-price").removeClass("up");
+            $(this).siblings(".search-price").removeClass("down");
+        });
+        $(".search-price").on("click",function () {
+            if($(this).hasClass("down")){
+                $(this).removeClass("down");
+            }else{
+                $(this).addClass("up").addClass("down");
+            }
+            $(this).siblings(".search-multi").removeClass("active");
+            $(this).siblings(".search-count").removeClass("active");
+        });
+        $(".add-to-car").on("click",function () {
+            var count = parseInt($(".car-count").html());
+            count++;
+            $(".car-count").html(count);
+            showToast();
+        });
+    });
+</script>
+</body>
+</html>
